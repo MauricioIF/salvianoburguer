@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Salvianos Burguer</title>
+</head>
+
+<body>
+    <!-- header-->
+    <header class="w-full h-[420px] bg-zinc-900 bg-home bg-cover bg-center">
+        <div class="w-full h-full flex flex-col justify-center items-center">
+
+            <img src="./assets/logo.png" alt="" class="w-32 h-32 rounded-full shadow-lg hover:scale-110 duration-200">
+
+            <h1 class="text-4xl mt-4 mb-2 font-bold text-white">Salviano Burguer</h1>
+
+            <span class="text-white font-bold">Lajes - RN</span>
+
+            <div class="bg-green-600 px-4 rounded-lg mt-5" id="date-span">
+                <span class="text-white font-medium">Qui á Dom - 19:30 as 22:30</span>
+            </div>
+        </div>
+
+    </header>
+    <!-- FIM header-->
+    <h2 class="text-4xl  font-bold text-center mt-9 mb-6">Menu</h2>
+    <h3 class="text-2xl  font-bold text-center mt-7 mb-6">Hambúrguers Artesanais</h3>
+
+    <!--inicioMENU-->
+    <div id="menu">
+        <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-10  gap-7 mx-auto max-w-7xl px-2 mb-16">
+            <!--PRODUTO ITEM-->
+
+
+            <div class="flex gap-2">
+                <img src="./assets/catupiry-bacon.png" alt="Tradicional"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-200">
+                <div>
+                    <p class="font-bold">Catupiry c/ bacon</p>
+                    <p class="text-sm">Pão de Brioche, Molho da Casa, hambúrguer 100g, Catupiry original e Bacon em
+                        cubos.</p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+
+                        <p class="font-bold text-lg">R$ 18.00</p>
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Catupiry c/ bacon"
+                            data-price="18.00"><i class="fa fa-cart-plus textlg text-white"></i></button>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="flex gap-2">
+                <img src="./assets/double-smash.png" alt="Tradicional"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-200">
+                <div>
+                    <p class="font-bold">Double Smash Burguer</p>
+                    <p class="text-sm">Pão de Brioche, Molho da Casa, Dois Hambúrgueres Smashados e Dois Queijos
+                        Cheddar.</p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+
+                        <p class="font-bold text-lg">R$ 20.00</p>
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Catupiry c/ bacon"
+                            data-price="18.00"><i class="fa fa-cart-plus textlg text-white"></i></button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="flex gap-2">
+                <img src="./assets/pioneiro.png" alt="Tradicional"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-200">
+                <div>
+                    <p class="font-bold">Pioneiro Burguer</p>
+                    <p class="text-sm">Pão de Brioche, Hambúrguer 100g, queijo empanado, couve folha no alho e óleo e o
+                        molho da casa.</p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+
+                        <p class="font-bold text-lg">R$ 21.90</p>
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Pioneiro Burguer"
+                            data-price="21.90"><i class="fa fa-cart-plus textlg text-white"></i></button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="flex gap-2">
+                <img src="./assets/nordestino.png" alt="Tradicional"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-200">
+                <div>
+                    <p class="font-bold">Nordestino</p>
+                    <p class="text-sm">Pão de Batata, irresistivel molho da casa, Hambúrguer de 100gr e Queijo Coalho
+                    </p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">R$ 20.00</p>
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Nordestino"
+                            data-price="20.00"><i class="fa fa-cart-plus textlg text-white"></i></button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="flex gap-2">
+                <img src="./assets/supreme.png" alt="Tradicional"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-200">
+                <div>
+                    <p class="font-bold">Supreme Burguer</p>
+                    <p class="text-sm">Delicioso Pão de Brioche, Blend de Carne Bovina 100g, Cheddar Cremoso, Onion
+                        Rings, Bacon e Molho da Casa.</p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+
+                        <p class="font-bold text-lg">R$ 22.00</p>
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Supreme Burguer"
+                            data-price="22.00"><i class="fa fa-cart-plus textlg text-white"></i></button>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!--PRODUTO ITEM-->
+        </main>
+        <div class="mx-auto max-w-7xl px-2 my-2">
+            <h1 class="font-bold text-3xl">Bebidas</h1>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16"
+            id="bebidas">
+            <!--BEBIDA-->
+            <div class="flex gap-2">
+                <img src="./assets/coca.png" alt="Coca-cola"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-200">
+                <div>
+                    <p class="font-bold">Coca-cola</p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">R$ 6.00</p>
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Coca-cola"
+                            data-price="6.00">
+                            <i class="fa fa-cart-plus textlg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16"
+            id="bebidas">
+            <!--BEBIDA-->
+            <div class="flex gap-2">
+                <img src="./assets/coca.png" alt="Coca-cola"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-200">
+                <div>
+                    <p class="font-bold">Coca-cola</p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">R$ 6.00</p>
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Coca-cola"
+                            data-price="6.00">
+                            <i class="fa fa-cart-plus textlg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            
+
+            <!-- Adicione mais bebidas aqui, se necessário -->
+
+        </div>
+
+
+    </div>
+    <!--fimMENU-->
+</body>
+
+</html>
