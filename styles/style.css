@@ -6,3 +6,17 @@ body{
     background-color: #f6f7f8;
 }
 
+#cart-items {
+    max-height: 300px; /* Tamanho máximo da área de itens */
+    overflow-y: auto;  /* Habilita a rolagem vertical */
+}
+
+#cart-modal {
+    max-height: 80vh;  /* Ajusta o tamanho máximo do modal para 80% da altura da tela */
+    overflow-y: auto;  /* Permite rolar o conteúdo do modal, se necessário */
+}
+
+#cart-total,
+#checkout-btn {
+    margin-top: 10px;
+}
