@@ -12,13 +12,13 @@ const observacoes = document.getElementById("obs");
 
 let cart = [];
 
-//ABRIR CARRINHO
+// ABRIR CARRINHO
 cartBtn.addEventListener("click", function () {
   cartModal.style.display = "flex";
   updateCartModal();
 });
 
-//FECHAR CARRINHO
+// FECHAR CARRINHO
 cartModal.addEventListener("click", function (event) {
   if (event.target === cartModal) {
     cartModal.style.display = "none";
@@ -39,8 +39,7 @@ menu.addEventListener("click", function (event) {
   }
 });
 
-//func para add no carrinho
-
+// Função para adicionar item no carrinho
 function addToCart(name, price) {
   const existingItem = cart.find((item) => item.name === name);
 
@@ -57,6 +56,7 @@ function addToCart(name, price) {
   updateCartModal();
 }
 
+// Atualizar o modal do carrinho
 function updateCartModal() {
   cartItemsContainer.innerHTML = "";
   let total = 0;
@@ -80,7 +80,6 @@ function updateCartModal() {
             <button class = "remove-from-cart-btn" data-name="${item.name}"> 
                  Remover
             </button>
-         
     </div>`;
 
     total += item.price * item.quantity;
@@ -95,11 +94,10 @@ function updateCartModal() {
   cartCounter.innerHTML = cart.length;
 }
 
-//func para remover item
+// Função para remover item do carrinho
 cartItemsContainer.addEventListener("click", function (event) {
   if (event.target.classList.contains("remove-from-cart-btn")) {
     const name = event.target.getAttribute("data-name");
-
     removeItemCart(name);
   }
 });
@@ -119,6 +117,7 @@ function removeItemCart(name) {
   }
 }
 
+// Verificar e exibir aviso de endereço
 addressInput.addEventListener("input", function (event) {
   let inputValue = event.target.value;
   if (inputValue !== "") {
@@ -126,7 +125,8 @@ addressInput.addEventListener("input", function (event) {
     addressWarn.classList.add("hidden");
   }
 });
-//finalizar pedido
+
+// Finalizar pedido
 checkoutBtn.addEventListener("click", function () {
   const isOpen = checkoutRestaurantOpen();
 
@@ -146,51 +146,51 @@ checkoutBtn.addEventListener("click", function () {
     return;
   }
 
-  if (cart.lenght === 0) return;
+  if (cart.length === 0) return;
   if (addressInput.value === "") {
     addressWarn.classList.remove("hidden");
     addressInput.classList.add("border-red-500");
     return;
   }
 
-  //enviar pedido para api do whats
+  // Enviar pedido para API do WhatsApp
   const cartItems = cart
     .map((item) => {
-      return `${item.name} Quantidade: (${item.quantity}) Preço: R$ ${
+      return `${item.name} Quantidade: (${item.quantity}) Preço: R$ ${(
         item.price.toFixed(2) * item.quantity
-      }|  `;
+      ).toFixed(2)}|  `;
     })
-    .join("");
+    .join(" ");
 
   const message = encodeURIComponent(cartItems);
   const phone = "558499367914";
 
   window.open(
     `https://wa.me/${phone}?text=${message} Endereço: ${addressInput.value}| Obs: ${observacoes.value}|`,
-    "blank"
+    "_blank"
   );
-  cart = 0;
+
+  // Limpar o carrinho após o pedido
+  cart = [];
   updateCartModal();
 });
 
-//verificar a hora e manipular o card horario
+// Verificar se o restaurante está aberto
 function checkoutRestaurantOpen() {
-  function checkoutRestaurantOpen() {
-    const data = new Date();
-    const hora = data.getHours();
-    const minutos = data.getMinutes();
+  const data = new Date();
+  const hora = data.getHours();
+  const minutos = data.getMinutes();
 
-    // Verifica se está entre 19:30 e 22:30
-    if (
-      (hora === 19 && minutos >= 30) ||
-      (hora > 19 && hora < 22) ||
-      (hora === 22 && minutos < 30)
-    ) {
-      return true; // Restaurante está aberto
-    }
+  // Verifica se está entre 17:00 e 22:30
+  if (
+    (hora === 19 && minutos >= 0) || // Restaurante abre às 17:00
+    (hora > 19 && hora < 22) || // Até as 22:00
+    (hora === 22 && minutos < 30) // Até as 22:30
+  ) {
+    return true; // Restaurante está aberto
+  }
 
-    return false; // Restaurante está fechado
-  } // O restaurante está fechado
+  return false; // Restaurante está fechado
 }
 
 const spanItem = document.getElementById("date-span");
