@@ -180,14 +180,18 @@ function checkoutRestaurantOpen() {
   const data = new Date();
   const hora = data.getHours();
   const minutos = data.getMinutes();
+  const diaSemana = data.getDay();
 
-  // Verifica se está entre 17:00 e 22:30
-  if (
-    (hora === 19 && minutos >= 0) || // Restaurante abre às 17:00
-    (hora > 19 && hora < 22) || // Até as 22:00
-    (hora === 22 && minutos < 30) // Até as 22:30
-  ) {
-    return true; // Restaurante está aberto
+  // Verifica se é quinta-feira (4), sexta-feira (5), sábado (6) ou domingo (0)
+  if (diaSemana === 4 || diaSemana === 5 || diaSemana === 6 || diaSemana === 0) {
+    // Verifica se está entre 17:00 e 22:30
+    if (
+      (hora === 19 && minutos >= 0) || // Restaurante abre às 17:00
+      (hora > 19 && hora < 22) || // Até as 22:00
+      (hora === 22 && minutos < 30) // Até as 22:30
+    ) {
+      return true; // Restaurante está aberto
+    }
   }
 
   return false; // Restaurante está fechado
